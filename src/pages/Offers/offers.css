@@ -37,13 +37,13 @@
 .showcase {
   display: flex;
   flex-direction: column;
-
-  @media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1024px) {
+  .showcase {
     flex-direction: row;
     gap: 32px;
   }
 }
-
 .searchResults {
   display: flex;
   flex-direction: column;
@@ -82,8 +82,9 @@
   gap: 1.5rem;
 
   margin-bottom: 1.5rem;
-
-  @media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1024px) {
+  .filtersContainer {
     max-width: 20vw;
     border-right: 1px solid #ddd;
 
@@ -98,22 +99,24 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  @media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1024px) {
+  .filters {
     text-align: left;
   }
 }
-
 .filtersList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
+}
 
-  @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
+  .filtersList {
     justify-content: center;
   }
 }
-
 .filters button {
   padding: 0.5rem 1rem;
 
