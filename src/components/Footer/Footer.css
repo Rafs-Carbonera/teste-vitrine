@@ -5,4 +5,9 @@
   margin-top: 2rem;
   font-size: 0.9rem;
   color: #555;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

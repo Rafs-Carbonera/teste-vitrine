@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "../css/index.css";
-import ProductCard from "../components/ProductCard/ProductCard";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import bannerImg from "../../assets/banner.png";
+import "./offers.css";
 
 function Offers() {
   const [allProducts, setAllProducts] = useState([]);
@@ -61,59 +62,58 @@ function Offers() {
   };
 
   return (
-    <div>
-      <header className="banner">
-        <img
-          src="./assets/banner.png"
-          alt="Banner de Ofertas"
-          className="banner-image"
-        />
-      </header>
+    <div className="offersContainer">
+      <div className="banner">
+        <img src={bannerImg} alt="Banner de Ofertas" className="bannerImage" />
+      </div>
 
-      <main className="main-container">
+      <main className="mainContainer">
         <h1 className="title">Ofertas da Semana</h1>
         <div className="showcase">
           <div className="filtersContainer">
             <div className="filters">
               <h3>Categorias</h3>
-
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => handleCategory(cat)}
-                  className={activeCategory === cat ? "active" : ""}
-                >
-                  {cat === "all" ? "Todos" : cat}
-                </button>
-              ))}
+              <div className="filtersList">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => handleCategory(cat)}
+                    className={activeCategory === cat ? "active" : ""}
+                  >
+                    {cat === "all" ? "Todos" : cat}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="filters">
               <h3>Preço</h3>
-              <button
-                onClick={() => handlePrice("all")}
-                className={activePrice === "all" ? "active" : ""}
-              >
-                Todos
-              </button>
-              <button
-                onClick={() => handlePrice("low")}
-                className={activePrice === "low" ? "active" : ""}
-              >
-                Até R$50
-              </button>
-              <button
-                onClick={() => handlePrice("mid")}
-                className={activePrice === "mid" ? "active" : ""}
-              >
-                R$50 - R$100
-              </button>
-              <button
-                onClick={() => handlePrice("high")}
-                className={activePrice === "high" ? "active" : ""}
-              >
-                Acima de R$100
-              </button>
+              <div className="filtersList">
+                <button
+                  onClick={() => handlePrice("all")}
+                  className={activePrice === "all" ? "active" : ""}
+                >
+                  Todos
+                </button>
+                <button
+                  onClick={() => handlePrice("low")}
+                  className={activePrice === "low" ? "active" : ""}
+                >
+                  Até R$50
+                </button>
+                <button
+                  onClick={() => handlePrice("mid")}
+                  className={activePrice === "mid" ? "active" : ""}
+                >
+                  R$50 - R$100
+                </button>
+                <button
+                  onClick={() => handlePrice("high")}
+                  className={activePrice === "high" ? "active" : ""}
+                >
+                  Acima de R$100
+                </button>
+              </div>
             </div>
           </div>
           <section className="searchResults">

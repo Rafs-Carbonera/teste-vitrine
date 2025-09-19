@@ -8,28 +8,39 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
-
-  max-width: 300px;
 }
 
-.product-title {
+.producCard img {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+}
+
+.productCardMainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productTitle {
   font-size: 1rem;
   color: #333;
 }
 
-.product-image {
+.productImage {
   max-width: 100%;
   height: auto;
   max-height: 300px;
   object-fit: contain;
 }
 
-.product-price {
+.productPrice {
   font-weight: bold;
   color: #27ae60;
 }
 
-.buy-button {
+.buyButton {
   padding: 0.5rem 1rem;
   background-color: #27ae60;
   border: none;
@@ -40,6 +51,6 @@
   transition: background 0.3s;
 }
 
-.buy-button:hover {
+.buyButton:hover {
   background-color: #219150;
 }
